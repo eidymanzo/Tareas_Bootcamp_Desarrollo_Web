@@ -1,0 +1,73 @@
+
+    table{
+
+        border:3px solid black;
+        width: 49%;
+        display: inline-block;
+        padding: 20px;
+        
+    }
+   .en_linea{
+    display: inline-block;
+   }
+
+   .contenedor{
+    display:flex;
+    gap:20px;
+   }
+
+   .tabla{
+    flex:1;
+   }
+
+   .formulario{
+    flex: 1;
+   }
+
+    td {
+        border: 2px solid black;
+        border-collapse: collapse;
+        padding: 15px 15px;
+        margin-top: auto;
+        color: black;
+        background-color: rgb(155, 235, 238);
+        color: class black;
+        text-align: center;
+
+    }
+
+    th {
+        background-color:rgba(217, 225, 229, 0.938)
+    }
+
+   form{
+        width: 49%;
+        display: inline-block;
+        
+   }
+
+   input[type="text"],input[type="email"]{
+    width: 100%;
+   }
+
+   header{
+    background-color:rgb(61, 184, 184);
+    padding: 20px;
+ 
+   }
+
+   button{
+    border-radius: 5px;
+    background-color:rgba(95, 178, 196, 0.215)
+    width: 25px;
+    padding: 5px;
+    margin: 20px;
+}
+  #titulo{
+    text-align: center;
+    font-family: Georgia;
+    font-weight: bold;
+    font-size: 1em;
+
+  }
+   

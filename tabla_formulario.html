@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla_y_Formulario_Entrega_1</title>
+    <link rel="stylesheet" href="tabla_formulario.css">
+    <link rel="stylesheet" href="pc.css" media="screen and (min-width:768px)">
+    
+</head>
+
+<body>
+
+    <header>
+      
+        <div class="en_linea" id="titulo">Tabla_y_Formulario </div>
+        
+        <div class="contenedor">
+            <div class="tabla">
+
+            </div>
+            <div class="formulario">
+
+            </div>
+        </div>
+    </header>
+    
+    <table>
+        <thead>
+         <h1>Tabla</h1>
+            <tr>
+
+                <th>Nombres y Apellidos</th>
+                <th>Email</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Género</th>
+            </tr>  
+
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Carlos Pérez</td>  
+                <td>carlospérez133@gmail.com</td>  
+                <td>10/03/2020</td>  
+                <td>Masculino</td>  
+            </tr>
+
+            <tr>
+                <td>Luis Ponce</td>  
+                <td>luisponce123@gmail.com</td>  
+                <td>01/02/2000</td>  
+                <td>Masculino</td>  
+            </tr>
+
+            <tr>
+                <td>José Blanco</td>  
+                <td>joseblanco1@gmail.com</td>  
+                <td>10/10/2000</td>  
+                <td>Masculino</td>  
+            </tr>
+
+            <tr>
+                <td>Ana Del Valle</td>  
+                <td>anadelvalle123@gmail.com</td>  
+                <td>05/05/2000</td>  
+                <td>Femenino</td>  
+            </tr>
+
+        </tbody>
+    </table>
+
+
+    <form action="login.html">
+        <h1>Formulario</h1>
+        <div>
+            <b><label for="Nombre">Nombres y Apellidos:</label></b><br>
+            <input type="text" id="username" name="Nombres y Apellidos" required>
+            <br>
+            <br>
+        </div>
+
+        <div>
+            <b><label for="username">Email:</label></b> <br>
+            <input type="text" id="email" name="Correo electrónico" required>
+            <br>
+            <br>
+        </div>
+
+        <div>
+            <b><label for="username">Fecha de Nacimiento:</label></b><br>
+            <input type="date" id="fecha" required>
+
+            <br>
+            <br>
+        </div>
+
+        <div>
+            <fieldset>
+                <legend>Género:</legend>
+                <input type="radio" value="f" name="genero">
+                <label>Femenino</label>
+                <br>
+
+                <input type="radio" value="m" name="genero">
+                <label>Masculino</label>
+            </fieldset>
+            
+            <br>
+            <br>
+        </div>
+
+            <button> ☑️Enviar</button>
+
+         
+    </form>
+
+</body>
+
+</html>
+
