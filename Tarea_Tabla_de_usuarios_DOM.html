@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de usuarios - formulario + manipulación del DOM</title>
+</head>
+
+<h1>Tabla de usuarios - formulario + manipulación del DOM</h1>
+
+<table id="tablaPrincipal">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+        </tr>
+    </thead>
+
+    <tbody id="container">
+        <tr>
+            <td>Carlos</td>
+            <td>Bravo</td>
+            <td>cbravo@gmail.com</td>
+            <td>600600600</td>
+        </tr>
+
+        <tr>
+            <td>Laura</td>
+            <td>Pérez</td>
+            <td>lauraperez@gmail.com</td>
+            <td>600123123</td>
+        </tr>
+
+        <tr>
+            <td>Luis</td>
+            <td>Toro</td>
+            <td>luistoro@gmail.com</td>
+            <td>600100200</td>
+        </tr>
+
+    </tbody>
+</table>
+<br>
+<br>
+
+<h1>Formulario</h1>
+<div>
+    <fieldset>
+        <legend><b>Datos Personales:</b></legend>
+        <br>
+
+        <b><label for="Nombre">Nombre:</label></b><br>
+
+        <input type="text" id="username" name="nombre" required placeholder="user name" autocomplete="off">
+        <br>
+        <br>
+
+        <b><label for="Apellido">Apellido:</label></b><br>
+        <input type="text" id="apellido" name="apellido" required placeholder="last name" autocomplete="off">
+        <br>
+        <br>
+
+        <b><label for="Email">Email:</label></b><br>
+        <input type="text" id="email" name="email" required placeholder="email" autocomplete="off">
+        
+        <br>
+
+        <b><label for="Telefono">Teléfono:</label></b><br>
+        <input type="text" id="telefono" name="telefono" required placeholder="phone" autocomplete="off">
+        <br>
+        <br> 
+</div>
+
+</fieldset>
+<br>
+
+<!-- /*Para capturar el evento submit*/ -->
+
+<form id="my-form" method="post">
+    <input type="text" name="username" placeholder="user name" autocomplete="off">
+    <input type="text" name="apellido" placeholder="apellido" autocomplete="off">
+    <input type="text" name="email" placeholder="email" autocomplete="off">
+    <input type="text" name="telefono" placeholder="telefono" autocomplete="off">
+
+    <input type="submit" value="Enviar">
+</form>
+
+
+</html>
+
+
+<script>
+
+    const tabla = document.getElementById("container")
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const formEl = document.getElementById('my-form');
+
+        //La función del eventListener es una función flecha que recibe como parámetro el evento
+        formEl.addEventListener("submit", (event) => {
+
+            // Esta línea evita que los datos del formulario se envíen a una página nueva
+            event.preventDefault()
+            const form = event.target
+
+            const username = form.elements.username.value
+
+            const apellido = form.elements.apellido.value
+
+            const email = form.elements.email.value
+
+            const telefono = form.elements.telefono.value
+
+            console.log(username, apellido, email, telefono)
+
+
+            // /*Crear un elemento*/
+            const nuevoIncluido = document.createElement("tr")
+            nuevoIncluido.classList.add("ticket")
+
+            // /*Para crear una celda en la tabla y con textContent ponerle texto a la celda*/
+            const nombrePersonaAñadida = document.createElement("td")
+            nombrePersonaAñadida.textContent = username
+
+            const apellidoPersonaAñadida = document.createElement("td")
+            apellidoPersonaAñadida.textContent = apellido
+
+            const emailPersonaAñadida = document.createElement("td")
+            emailPersonaAñadida.textContent = email
+
+            const telefonoPersonaAñadida = document.createElement("td")
+            telefonoPersonaAñadida.textContent = telefono
+
+            // /*Con esto se agrega la fila a la tabla*/
+
+            nuevoIncluido.append(nombrePersonaAñadida)
+            nuevoIncluido.append(apellidoPersonaAñadida)
+            nuevoIncluido.append(emailPersonaAñadida)
+            nuevoIncluido.append(telefonoPersonaAñadida)
+
+            tabla.append(nuevoIncluido)
+        })
+    })
+
+</script>
+
+<style>
+    table,
+    th,
+    td {
+        border: 2px solid rgba(22, 22, 166, 0.559);
+        border-collapse: collapse;
+        padding: 5px 20px;
+    }
+
+    th {
+        background-color: rgba(38, 150, 167, 0.201);
+    }
+
+    form {
+        color: black;
+        border: 1px solid rgba(22, 22, 166, 0.559);
+        border-collapse: collapse;
+        padding: 5px 20px;
+    }
+
+    #username {
+        width: 300px;
+    }
+</style>
